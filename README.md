@@ -35,7 +35,7 @@
 | <a name="input_create_igw"></a> [create\_igw](#input\_create\_igw) | Boolean to enable internet gateway. | `bool` | `true` | no |
 | <a name="input_enable_dns_hostnames"></a> [enable\_dns\_hostnames](#input\_enable\_dns\_hostnames) | Boolean to enable dns hostnames. | `bool` | `true` | no |
 | <a name="input_enable_nat_gateway"></a> [enable\_nat\_gateway](#input\_enable\_nat\_gateway) | Boolean to enable nat gateway. | `bool` | `true` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment area, e.g. prod or preprod. | `string` | `"teste"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment area, e.g. prod or preprod. | `string` | `""` | no |
 | <a name="input_instance_types"></a> [instance\_types](#input\_instance\_types) | List of instance type to use in eks node group | `list(string)` | <pre>[<br>  "t2.small"<br>]</pre> | no |
 | <a name="input_min_size"></a> [min\_size](#input\_min\_size) | minimum number of running instances in the node group | `string` | `"1"` | no |
 | <a name="input_node_group_name"></a> [node\_group\_name](#input\_node\_group\_name) | eks managed node group name | `string` | `"managed-group"` | no |
@@ -45,10 +45,10 @@
 | <a name="input_public_subnet_ids"></a> [public\_subnet\_ids](#input\_public\_subnet\_ids) | public subnets ids | `list(string)` | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
 | <a name="input_single_nat_gateway"></a> [single\_nat\_gateway](#input\_single\_nat\_gateway) | Boolean to enable single nat gateway. | `bool` | `true` | no |
-| <a name="input_tenant"></a> [tenant](#input\_tenant) | Account Name or unique account unique id e.g., apps or management or aws007. | `string` | `"testt"` | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | VPC CIDR. | `string` | `"10.2.0.0/16"` | no |
+| <a name="input_tenant"></a> [tenant](#input\_tenant) | Account Name or unique account unique id e.g., apps or management or aws007. | `string` | `""` | no |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | VPC CIDR. | `string` | `""` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC ID - leave empty in order to create a new one on the fly. | `string` | `""` | no |
-| <a name="input_zone"></a> [zone](#input\_zone) | zone, e.g. dev or qa or load or ops etc... | `string` | `"testz"` | no |
+| <a name="input_zone"></a> [zone](#input\_zone) | zone, e.g. dev or qa or load or ops etc... | `string` | `""` | no |
 
 ## Outputs
 
