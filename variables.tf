@@ -6,19 +6,19 @@ variable "region" {
 variable "tenant" {
   type        = string
   description = "Account Name or unique account unique id e.g., apps or management or aws007."
-  default     = "testt"
+  default     = ""
 }
 
 variable "environment" {
   type        = string
-  default     = "teste"
+  default     = ""
   description = "Environment area, e.g. prod or preprod."
 }
 
 variable "zone" {
   type        = string
   description = "zone, e.g. dev or qa or load or ops etc..."
-  default     = "testz"
+  default     = ""
 }
 
 
@@ -33,7 +33,7 @@ variable "vpc_id" {
 variable "vpc_cidr" {
   type        = string
   description = "VPC CIDR."
-  default     = "10.2.0.0/16"
+  default     = ""
 }
 
 variable "enable_nat_gateway" {
