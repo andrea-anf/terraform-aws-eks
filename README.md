@@ -23,7 +23,7 @@ The module create an EKS cluster and by decision of the user can create a VPC or
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aws_vpc"></a> [aws\_vpc](#module\_aws\_vpc) | terraform-aws-modules/vpc/aws | ~> 3.0 |
-| <a name="module_eks_blueprints"></a> [eks\_blueprints](#module\_eks\_blueprints) | git@github.com:aws-ia/terraform-aws-eks-blueprints.git | n/a |
+| <a name="module_eks_blueprints"></a> [eks\_blueprints](#module\_eks\_blueprints) | git::https://github.com/andrea-anf/terraform-aws-eks.git | n/a |
 
 ## Resources
 
