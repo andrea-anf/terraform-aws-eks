@@ -1,3 +1,7 @@
+The module create an EKS cluster and by decision of the user can create a VPC or use an existing one. Some part of the module are not useful for itself, but they will be usefull in the future to install addons (to do with terraform-aws-eks-addons).
+
+ This repository has been extracted from https://github.com/aws-ia/terraform-aws-eks-blueprints.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
