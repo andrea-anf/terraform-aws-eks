@@ -44,7 +44,7 @@ module "eks_blueprints" {
   environment = var.environment
   zone        = var.zone
   enable_irsa = true
-  # EKS Cluster VPC and Subnet mandatory config
+
   vpc_id             = var.vpc_id == "" ? module.aws_vpc[0].vpc_id : var.vpc_id
   private_subnet_ids = var.vpc_id == "" ? module.aws_vpc[0].private_subnets : var.private_subnet_ids
 
