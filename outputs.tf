@@ -15,7 +15,7 @@ output "eks_cluster_id" {
 }
 
 output "azs" {
-  value = module.aws_vpc[0].azs
+  value = local.azs
 }
 
 output "eks_cluster_certificate_authority_data" {
@@ -30,11 +30,11 @@ output "eks_cluster_name" {
   value = module.eks_blueprints.eks_cluster_id
 }
 
-output "cluster_identity_oidc_issuer" {
+output "eks_oidc_issuer_url" {
   value = module.eks_blueprints.eks_oidc_issuer_url
 }
 
-output "cluster_identity_oidc_issuer_arn" {
+output "eks_oidc_provider_arn" {
   value = module.eks_blueprints.eks_oidc_provider_arn
 }
 

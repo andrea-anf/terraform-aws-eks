@@ -38,7 +38,7 @@ module "aws_vpc" {
 
 
 module "eks_blueprints" {
-  source = "git::https://github.com/andrea-anf/terraform-aws-eks.git"
+  source = "git::https://github.com/aws-ia/terraform-aws-eks-blueprints.git"
 
   tenant      = var.tenant
   environment = var.environment
