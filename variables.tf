@@ -1,24 +1,24 @@
 variable "region" {
   type        = string
-  default     = ""
+  default     = "eu-west-1"
 } 
 
 variable "tenant" {
   type        = string
   description = "Account Name or unique account unique id e.g., apps or management or aws007."
-  default     = ""
+  default     = "mytestt"
 }
 
 variable "environment" {
   type        = string
-  default     = ""
+  default     = "teste"
   description = "Environment area, e.g. prod or preprod."
 }
 
 variable "zone" {
   type        = string
   description = "zone, e.g. dev or qa or load or ops etc..."
-  default     = ""
+  default     = "testz"
 }
 
 
@@ -33,7 +33,7 @@ variable "vpc_id" {
 variable "vpc_cidr" {
   type        = string
   description = "VPC CIDR - required to create a new VPC"
-  default     = ""
+  default     = "10.8.0.0/16"
 }
 
 variable "enable_nat_gateway" {
@@ -101,35 +101,16 @@ variable "cluster_version" {
 variable "managed_node_groups" {
   type        = any
   description = "managed node group configuration"
-  default     = {}
+  default     = {
+     t3_L= {
+      node_group_name = "test-nodegroup"
+      instance_types = ["t3.large"]
+      min_size = "1"
+      max_size = "4"
+      desired_size = "1"
+      max_unavailable = "1"
+    }
+  }
 } 
 
-variable "node_group_name" {
-  type        = string
-  description = "eks managed node group name"
-  default     = ""
-} 
 
-variable "instance_types" {
-  type        = list(string)
-  description = "List of instance type to use in eks node group. t3.large or more is recommended"
-  default     = []
-} 
-
-variable "min_size" {
-  type        = string
-  description = "minimum number of running instances in the node group. Minimum of 2 is recommended"
-  default     = "2"
-} 
-
-variable "max_size" {
-  type        = string
-  description = "maximum number of running instances in the node group"
-  default     = "2"
-} 
-
-variable "desired_size" {
-  type        = string
-  description = "desired number of running instances in the node group"
-  default     = "2"
-} 

@@ -2,6 +2,63 @@ The module create an EKS cluster and by decision of the user can create a VPC or
 
  This repository has been extracted from https://github.com/aws-ia/terraform-aws-eks-blueprints.
 
+## Usage
+The module can be used in two ways.
+**Creating a new VPC.** Leaving empty ``vpc_id`` and providing a ``vpc_cidr``
+```tf
+module "eks" {
+    source = "git::git@bitbucket.org:beetobit/terraform-aws-eks.git?ref=1.0"
+
+    region = "eu-west-1"
+    tenant = "mytenant"
+    environment = "myenv"
+    zone = "dev"
+
+    vpc_cidr = "cidr for the new VPC e.g. 10.0.0.0/16"
+
+    cluster_version = "1.21"
+    managed_node_groups = {
+        t3_L = {
+            node_group_name = "my-nodegroup"
+            instance_types = ["t3.large"]
+            min_size = "1"
+            max_size = "4"
+            desired_size = "1"
+            max_unavailable = "1"
+        }
+    }
+}
+```
+**Using an existent VPC.** Giving a ``vpc_id`` and the corresponding private/public subnets
+
+```
+module "eks" {
+    source = "git::git@bitbucket.org:beetobit/terraform-aws-eks.git?ref=1.0"
+
+    region = "eu-west-1"
+    tenant = "mytenant"
+    environment = "myenv"
+    zone = "dev"
+
+    vpc_id = "vpc-0"
+    private_subnet_ids = ["subnet-0", "subnet-1", "subnet-2"]
+    public_subnet_ids = ["subnet-3", "subnet-4", "subnet-5"]
+
+    cluster_version = "1.21"
+    managed_node_groups = {
+        t3_L = {
+            node_group_name = "test-nodegroup"
+            instance_types = ["t3.large"]
+            min_size = "1"
+            max_size = "4"
+            desired_size = "1"
+            max_unavailable = "1"
+        }
+    }
+}
+```
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
