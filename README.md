@@ -33,7 +33,7 @@ module "eks" {
 
 **Using an existent VPC.** Giving a ``vpc_id`` and the corresponding private/public subnets
 
-```
+```tf
 module "eks" {
     source = "git::git@bitbucket.org:beetobit/terraform-aws-eks.git?ref=1.0"
 
