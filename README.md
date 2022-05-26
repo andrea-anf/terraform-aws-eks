@@ -4,6 +4,7 @@ The module create an EKS cluster and by decision of the user can create a VPC or
 
 ## Usage
 The module can be used in two ways.
+
 **Creating a new VPC.** Leaving empty ``vpc_id`` and providing a ``vpc_cidr``
 ```tf
 module "eks" {
@@ -29,6 +30,7 @@ module "eks" {
     }
 }
 ```
+
 **Using an existent VPC.** Giving a ``vpc_id`` and the corresponding private/public subnets
 
 ```
